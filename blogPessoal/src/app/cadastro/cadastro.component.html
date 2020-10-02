@@ -1,0 +1,34 @@
+<div class="container mt-5 mb-5">
+    <div class="row d-flex justify-content-center mb-4">
+        <h1 class="font-weight-bold">Cadastro</h1>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-7 border rounded pb-3 pt-3">
+            <div>
+                <div class="form-group pb-2">
+                    <label for="inputNome" class="font-weight-bold" style="font-size: 19px;">Nome completo</label>
+                    <input type="text" class="form-control" id="inputNome" aria-describedby="emailHelp" placeholder="Ex: Maria da Silva" [(ngModel)]="user.nome" name="inputNome">
+                </div>
+                <div class="form-group pb-2">
+                    <label for="inputEmail" class="font-weight-bold" style="font-size: 19px;">E-mail</label>
+                    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Seu email" name="inputEmail" [(ngModel)]='user.usuario'>
+                </div>
+                <div class="form-group">
+                    <label for="inputPasswordCad" class="font-weight-bold" style="font-size: 19px;">Senha</label>
+                    <input type="text" class="form-control" id="inputPasswordCad" placeholder="Insira sua senha" (input)='conferirSenha($event)' value="{{senha}}">
+                </div>
+                <div class="form-group">
+                    <label for="inputConfPasswordCad" class="font-weight-bold" style="font-size: 19px;">Confirmar senha</label>
+                    <input type="text" class="form-control" id="inputConfPasswordCad" placeholder="Insira a senha novamente" [(ngModel)]="user.senha">
+                </div>
+                <div class="container">
+                    <div class="row w-100 d-flex justify-content-center">
+                        <div class="col-md-6 mt-4">
+                            <button type="submit" class="btn btn-outline-info w-100" (click)="cadastrar()">Cadastrar</button>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>
