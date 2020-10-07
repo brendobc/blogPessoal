@@ -11,6 +11,9 @@ import { TemaService } from '../service/tema.service';
 })
 export class FeedComponent implements OnInit {
 
+  key: 'dia'
+  reverse: true
+
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
 
@@ -38,11 +41,11 @@ export class FeedComponent implements OnInit {
       alert('Preencha todos os campos antes de publicar!')
     } else {
       this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
-        this.postagem = resp
-        this.postagem = new Postagem()
-        alert('Postagem realizada com sucesso!')
-        this.findAllPostagens()
-      })
+        this.postagem = resp;
+        this.postagem = new Postagem();
+        alert('Postagem realizada com sucesso!');
+        this.findAllPostagens();
+      });
     }
   }
 
