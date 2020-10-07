@@ -8,6 +8,7 @@ import { AuthService } from '../service/auth.service';
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css']
 })
+
 export class CadastroComponent implements OnInit {
 
   user: User = new User();
@@ -36,7 +37,5 @@ export class CadastroComponent implements OnInit {
     } else {
       alert("Suas senhas não conferem")
     }
-
-    
   }
 }
