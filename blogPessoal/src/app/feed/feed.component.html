@@ -66,8 +66,8 @@
                                           <h5 class="card-title"> {{item.titulo}} </h5>
                                       </div>
                                       <div class="col-md-4 d-flex justify-content-end">
-                                         <a class="btn btn-primary mr-2 ml-2">Editar</a>
-                                         <a class="btn btn-danger ml-2">Apagar</a>
+                                         <a class="btn btn-primary mr-2 ml-2" [routerLink]="['/editar-postagem', item.id]">Editar</a>
+                                         <a class="btn btn-danger ml-2" [routerLink]="['/deletar-postagem', item.id]">Apagar</a>
                                       </div>
                                     </div>
                                 </div>
