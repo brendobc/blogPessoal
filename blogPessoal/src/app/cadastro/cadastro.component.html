@@ -15,11 +15,11 @@
                 </div>
                 <div class="form-group">
                     <label for="inputPasswordCad" class="font-weight-bold" style="font-size: 19px;">Senha</label>
-                    <input type="text" class="form-control" id="inputPasswordCad" placeholder="Insira sua senha" (input)='conferirSenha($event)' value="{{senha}}">
+                    <input type="password" class="form-control" id="inputPasswordCad" placeholder="Insira sua senha" (input)='conferirSenha($event)' value="{{senha}}">
                 </div>
                 <div class="form-group">
                     <label for="inputConfPasswordCad" class="font-weight-bold" style="font-size: 19px;">Confirmar senha</label>
-                    <input type="text" class="form-control" id="inputConfPasswordCad" placeholder="Insira a senha novamente" [(ngModel)]="user.senha">
+                    <input type="password" class="form-control" id="inputConfPasswordCad" placeholder="Insira a senha novamente" [(ngModel)]="user.senha">
                 </div>
                 <div class="container">
                     <div class="row w-100 d-flex justify-content-center">
