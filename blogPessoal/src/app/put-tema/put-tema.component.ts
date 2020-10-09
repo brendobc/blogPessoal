@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Tema } from '../model/Tema';
+import { AlertasService } from '../service/alertas.service';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class PutTemaComponent implements OnInit {
   constructor(
     private temaService: TemaService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alerta: AlertasService
   ) { }
 
   ngOnInit() {
@@ -34,10 +36,10 @@ export class PutTemaComponent implements OnInit {
     this.temaService.putTema(this.tema).subscribe((resp: Tema) => {
       this.tema = resp
       this.router.navigate(['/feed'])
-      alert('Tema alterado com sucesso')
+      this.alerta.showAlertSuccess('Tema alterado com sucesso')
     }, err => {
       if(err.status == '500') {
-        alert('Preencha todos os campos antes de enviar!')
+      this.alerta.showAlertDanger('Preencha todos os campos antes de enviar!')
       }
     })
   }
